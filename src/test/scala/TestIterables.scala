@@ -56,6 +56,17 @@ class TestIterables extends FunSuite{
 
   }
 
+  test("zip"){
+    //Iterable(x1, x2, x3) zip Iterable(y1, y2, y3) will return ((x1, y1), (x2, y2), (x3, y3))
+    val xs = List("Hello", "in")
+    val ys = List("World", "english")
+
+    (xs zip ys) should be (List(("Hello","World"),("in","english")))
+
+
+
+  }
+
 
 
 
