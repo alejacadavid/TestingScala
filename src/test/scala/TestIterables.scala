@@ -64,6 +64,44 @@ class TestIterables extends FunSuite{
   }
 
 
+  test("zipAll"){
+    //When the lists aren't the same size
+    val x = List("Hello", "World")
+    val y = List(1,2,3)
+
+    (x zipAll(y,"?","b")) should be (List(("Hello",1),("World",2),("?",3)))
+    (y zipAll(x,"b","?")) should be (List((1,"Hello"),(2,"World"),(3,"?")))
+
+  }
+
+  test("zipWithIndex"){
+    val xs = List("Manny", "Moe", "Jack")
+    xs.zipWithIndex should be (List(("Manny",0),("Moe",1),("Jack",2)))
+  }
+
+  test("sameElements"){
+    val xs = List("Manny", "Moe", "Jack")
+    val ys = List("Manny", "Moe", "Jack")
+    (xs sameElements ys) should be(true)
+
+    val xt = List("Manny", "Moe", "Jack")
+    val yt = List("Manny", "Jack", "Moe")
+    (xt sameElements yt) should be(false)
+
+    val xs1 = Set(3, 2, 5, 4, 1, 6, 7, 2)
+    val ys1 = Set(7, 2, 1, 2, 5, 6, 3, 4)
+    println(xs1)
+    println(ys1)
+    (xs1 sameElements ys1) should be(true)
+
+    val xt1 = Set(1, 2, 3)
+    val yt1 = Set(3, 2, 1)
+    println(xt1)
+    println(yt1)
+    (xt1 sameElements yt1) should be(false)
+
+  }
+
 
 
 }

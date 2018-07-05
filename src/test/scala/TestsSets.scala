@@ -3,7 +3,11 @@ import org.scalatest.Matchers._
 
 class TestsSets extends FunSuite {
 
-  test("test1"){
+  //Sets are Iterables that contain no duplicate elements.
+  //can't have duplicate elements.
+  //Sets are traditionally unordered
+
+  test("contains"){
 
     val mySet = Set("Michigan", "Ohio", "Wisconsin", "Iowa")
     mySet.size should be(4)
@@ -19,7 +23,7 @@ class TestsSets extends FunSuite {
     aNewSet2.contains("Michigan") should be(false)
   }
 
-  test("test2"){
+  test("diff"){
 
     val mySet1 = Set("Michigan", "Ohio", "Wisconsin", "Iowa")
     val mySet2 = Set("Wisconsin", "Michigan")
@@ -27,6 +31,17 @@ class TestsSets extends FunSuite {
 
     aNewSet.equals(Set("Ohio", "Iowa")) should be(true)
     aNewSet.equals(Set("Iowa","Ohio")) should be (true)
+  }
+
+  test("head"){
+    val mySet1 = Set("Michigan", "Ohio", "Wisconsin", "Iowa")
+    mySet1.head should be ("Michigan")
+  }
+
+  test("tail"){
+    val mySet1 = Set("Michigan", "Ohio", "Wisconsin", "Iowa")
+    mySet1.tail should be (Set("Ohio","Wisconsin","Iowa"))
+
   }
 
 }
