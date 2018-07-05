@@ -53,7 +53,6 @@ class TestIterables extends FunSuite{
     list.drop(3) should be (List(11,15,19,21,24,32)) //Drop n elements of list
     list.drop(6) should be (List(21,24,32))
     list.dropRight(3) should be (List(3,5,9,11,15,19))
-
   }
 
   test("zip"){
@@ -62,9 +61,6 @@ class TestIterables extends FunSuite{
     val ys = List("World", "english")
 
     (xs zip ys) should be (List(("Hello","World"),("in","english")))
-
-
-
   }
 
 
